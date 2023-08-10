@@ -29,6 +29,20 @@ app.get('/api/v1/pets', (req, res) => {
    res.send(pets);
 });
 
+// get pet by owner with query string         //is this right ???     
+    //set deconstructed owner to req.query
+    //send the response 
+    app.get('/api/v1/pets/owner', (req, res) => {
+        const {owner} = req.query
+        console.log(`Getting the pets owner, ${owner}`)
+    
+        // find the pet in the pets array
+        const pet = pets.find(pet => pet.owner === owner);
+    
+        // send the pet as a response
+        res.send(pets)
+    });
+
 // get pet by name
     //deconstruct name
     //request params
@@ -42,20 +56,6 @@ app.get('/api/v1/pets/:name', (req, res) => {
     // find the pet in the pets array
     const pet = pets.find(pet => pet.name === name);
 
-});
-
-// get pet by owner with query string                //i need this to work, isn't it supposed to shows the data like pets
-    //set deconstructed owner to req.query
-    //send the response 
-app.get('/api/v1/pets/owner', (req, res) => {
-    const {owner} = req.query
-    console.log(`Getting the pets owner, ${owner}`)
-
-    // find the pet in the pets array
-    const pet = pets.find(pet => pet.owner === owner);
-
-    // send the pet as a response
-    res.send(pets)
 });
 
 app.listen(PORT, () => {
