@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Block 31</title>
+  </head>
+
+  <body>
+     <h1>Block 31 Workshop<br>
+     Pet Finder</h1>
+
+     <ul></ul>
+
+     <script>
+      fetch("http://localhost:3000/api/v1/pets")
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+        })
+  
+     </script>
+    
+  </body>
+</html>
