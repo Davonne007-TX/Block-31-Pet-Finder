@@ -34,7 +34,7 @@ app.get('/api/v1/pets', (req, res) => {
     //send the response 
     app.get('/api/v1/pets/owner', (req, res) => {
         const {owner} = req.query
-        console.log(`Getting the pets owner, ${owner}`)
+        console.log(`Getting the pets owner, ${owner}`) //this is undefined ...? 
     
         // find the pet in the pets array
         const pet = pets.find(pet => pet.owner === owner);
