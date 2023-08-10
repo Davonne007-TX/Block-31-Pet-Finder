@@ -19,6 +19,13 @@
         .then(res => res.json())
         .then(data => {
           console.log(data);
+
+        const myUl = document.querySelector("ul")
+        data.forEach(pet => {
+          const li = document.createElement("li")
+          li.textContent = pet.name
+          myUl.appendChild(li)
+        });
         })
   
      </script>
