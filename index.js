@@ -11,9 +11,10 @@ const PORT = 3000;
 app.use(express.static('public'))
 
 // GET - / - returns homepage
+  //set the get to /, like the home page
+  //send the index.html
 app.get('/', (req, res) => {
     res.send("./index.html")
-
 });
 
 // hello world route
@@ -22,7 +23,7 @@ app.get('/api', (req, res) => {
 });
 
 // get all pets from the database
-  //send the response to send the pets
+  //set the response to send the pets
   //make sure you are requiring the data from data.js
 app.get('/api/v1/pets', (req, res) => {
    res.send(pets);
@@ -32,31 +33,29 @@ app.get('/api/v1/pets', (req, res) => {
     //deconstruct name
     //request params
     //respond send the deconstructed
+
+//??? Am i supposed to show the data ??? 
 app.get('/api/v1/pets/:name', (req, res) => {
     const {name} = req.params
     res.send(`Getting pet by the name ${name}`)
 
-
     // find the pet in the pets array
     const pet = pets.find(pet => pet.name === name);
 
-    // send the pet as a response
 });
 
-// get pet by owner with query string
+// get pet by owner with query string                //i need this to work, isn't it supposed to shows the data like pets
     //set deconstructed owner to req.query
     //send the response 
 app.get('/api/v1/pets/owner', (req, res) => {
     const {owner} = req.query
     console.log(`Getting the pets owner, ${owner}`)
-    res.send(pets)
-
 
     // find the pet in the pets array
     const pet = pets.find(pet => pet.owner === owner);
 
     // send the pet as a response
-
+    res.send(pets)
 });
 
 app.listen(PORT, () => {
