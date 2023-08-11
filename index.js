@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 
 // hello world route
 app.get('/api', (req, res) => {
-    res.send('Hello World!');
+    res.send('Hello World, Welcome to Block 31!');
 });
 
 // get all pets from the database
@@ -62,7 +62,6 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
-
 
 
 
